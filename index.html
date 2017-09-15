@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="chat">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="./img/icon.png" />
+    <meta charset="utf-8">
+    <title> </title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-controller="chatCtrl">
+	<div class="main-container">
+		<input type="text" placeholder="name" ng-model="username" />
+		<input type="text" placeholder="message" ng-model="message" size="100" /><button ng-click="send()">send</button>
+		<div class="chat-container">
+			<div ng-repeat="x in data"><b>{{ x.user}}</b> : {{ x.msg }}</div>
+		</div>
+    </div>
+    <img src="macbook.png" height="800" width="1200" id="mac"/>
+</body>
+
+</html>

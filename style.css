@@ -1,0 +1,21 @@
+.chat-container {
+    margin-top: 10px;
+    height: 552px !important;
+    width: 867px;
+    overflow-y: scroll !important;
+    border: 1px solid lightgray;
+}
+
+#mac {
+	position: absolute;
+	top: 0px;
+	margin-top: -10px;
+	margin-right: 250px;
+}
+
+.main-container {
+	margin-left: 165px;
+	position: absolute;
+	margin-top: 70px;
+	z-index: 9999 !important;
+}
