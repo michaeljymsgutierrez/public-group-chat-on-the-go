@@ -3,6 +3,7 @@
 
     app.controller('chatCtrl', function($scope, $http, $q) {
         $scope.data = [];
+        $scope.disableUser = false;
         setInterval(function() {
             $http({
                 url: 'http://192.168.10.154:4000/api/query',
@@ -21,6 +22,7 @@
 
 
         $scope.send = function() {
+            $scope.disableUser = true;
             if ($scope.username == "" || $scope.username == undefined || $scope.message == "" || $scope.message == undefined) {
                 alert("Empy fields !!! STUPID");
             } else {
