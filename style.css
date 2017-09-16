@@ -36,3 +36,20 @@
     height: 40px;
     padding-top: 15px;
 }
+
+#game {
+    float: right;
+    margin-top: -550px;
+    margin-right: 70px;
+    width: 600px;
+    height: 550px;
+    border-radius: 6px;
+    border: 1px solid lightgray;
+}
+
+body,
+button,
+input {
+    background-color: black;
+    color: white;
+}
