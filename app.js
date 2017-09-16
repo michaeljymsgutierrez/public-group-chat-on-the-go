@@ -4,6 +4,8 @@
     app.controller('chatCtrl', function($scope, $http, $q) {
         $scope.data = [];
         $scope.disableUser = false;
+        $scope.nightmode;
+        console.log($scope.nightmode);
         setInterval(function() {
             $http({
                 url: 'http://192.168.10.154:4000/api/query',
@@ -19,7 +21,6 @@
                 console.warn(err);
             });
         }, 1000);
-
 
         $scope.send = function() {
             $scope.disableUser = true;
