@@ -1,5 +1,8 @@
 'use strict';
 
+/*
+    Main Script Cycle
+*/
 function scriptCycle() {
     $(document).ready(function() {
         $('#msg').keydown(function(event) {
@@ -7,6 +10,22 @@ function scriptCycle() {
                 $('#send').trigger('click');
             }
         });
+        setInterval(function() {
+            Notification.requestPermission();
+            var user = $('#user').val();
+            try {
+                var mention = JSON.parse(window.localStorage.getItem('mention'));
+            } catch (err) {};
+            if (mention) {
+                if (Notification.permission == "granted" && mention.msg.search('@' + user) != -1 && mention.is_mentioned == 0) {
+                    var notification = new Notification('CG-Public-Group-Chat', {
+                        icon: 'js.png',
+                        body: "Hey there someone mentioned you " + user,
+                    });
+                    window.localStorage.removeItem('mention');
+                }
+            }
+        }, 1000);
     });
 }
 
