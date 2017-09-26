@@ -16,12 +16,16 @@
 
 <body ng-controller="chatCtrl" ng-class="{'night-mode': nightmode}">
     <div class="main-container">
-        <input type="text" id="user" placeholder="name" ng-model="username" ng-disabled="disableUser" ng-class="{'night-mode': nightmode}" />
-        <input type="text" id="msg" placeholder="message" ng-model="message" size="75" ng-class="{'night-mode': nightmode}" /><button ng-click="send()" id="send" ng-class="{'night-mode': nightmode}">send</button>
+        <div>
+            <iframe src="lib/game/index.html" id="game"></iframe>
+        </div>
+        <div class="form-container">
+            <input type="text" id="user" placeholder="name" ng-model="username" ng-disabled="disableUser" ng-class="{'night-mode': nightmode}" />
+            <input type="text" id="msg" placeholder="message" ng-model="message" ng-class="{'night-mode': nightmode}" /><button ng-click="send()" id="send" ng-class="{'night-mode': nightmode}">send</button>
+        </div>
         <div class="chat-container">
             <div ng-repeat="x in data" id="chats"><b>{{ x.user}}</b> : {{ x.msg }}</div>
         </div>
-        <iframe src="lib/game/index.html" id="game"></iframe>
         <label>Night Mode :<input type="checkbox" id="ticker" ng-model="nightmode"/></label>
     </div>
 </body>
