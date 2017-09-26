@@ -5,11 +5,18 @@
 */
 function scriptCycle() {
     $(document).ready(function() {
+        /*
+            Auto send data on enter
+        */
         $('#msg').keydown(function(event) {
             if (event.keyCode == 13) {
                 $('#send').trigger('click');
             }
         });
+
+        /*
+            Desktop Notification
+        */
         setInterval(function() {
             Notification.requestPermission();
             var user = $('#user').val();
@@ -26,7 +33,8 @@ function scriptCycle() {
                 }
             }
         }, 1000);
+
     });
-}
+};
 
 scriptCycle();
